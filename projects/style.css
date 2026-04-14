@@ -1,0 +1,106 @@
+:root {
+    --font-color-1: #102132;
+}
+
+@font-face {
+    font-family: "Droid Serif Regular";
+    src: url("resources/fonts/Droid\ Serif\ Regular.ttf");
+}
+@font-face {
+    font-family: "Droid Serif Bold";
+    src: url("resources/fonts/Droid\ Serif\ Bold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Droid Serif Italic";
+    src: url("resources/fonts/Droid\ Serif\ Italic.ttf");
+    font-style: italic, oblique;
+}
+@font-face {
+    font-family: "Droid Serif Bold Italic";
+    src: url("resources/fonts/Droid\ Serif\ Bold\ Italic.ttf");
+    font-weight: bold;
+    font-style: italic, oblique;
+}
+
+
+
+body {
+  background-color: rgb(239, 222, 205);
+}
+
+p {
+    font-size: 13px;
+    font-family: "Droid Serif";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-color-1);
+}
+
+h1 {
+    margin-top: 40px;
+    margin-bottom: 0px;
+    font-family: "Droid Serif";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-color-1);
+    text-decoration: underline;
+}
+
+subtext {
+    margin-top: 10px;
+    font-family: "Droid Serif";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-color-1);
+}
+
+links {
+    margin-top: 10px;
+    font-family: "Droid Serif";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-color-1);
+    font-size: 13px;
+}
+
+a:link {
+  color: var(--font-color-1);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--font-color-1);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--font-color-1);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--font-color-1);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 800px;
+}
+
+.cursive {
+  font-style: italic;
+}
