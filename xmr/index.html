@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xmr</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>xmr</h1>
+        </header>
+
+        <!-- XMR content -->
+        <main>
+            <div class="xmr-content">
+
+                <div class="xmr-address-box">
+                    <div class="xmr-address" id="xmr-address">
+                        8AxhagYadKuGMEq6iUUShv2uMRf4nX3yYAwbDdhHvxaAR7jpaWop6FTAKYY5t5Qy5dWxxje4weHbgauowDk2jdJX4TisVdC
+                    </div>
+                </div>
+
+                <button onclick="copyXMRAddress()" class="copy-btn" id="copy-button">
+                    copy address
+                </button>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p class="footer-text">君のキミ</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyXMRAddress() {
+            const address = document.getElementById('xmr-address').innerText.trim();
+            const button = document.getElementById('copy-button');
+
+            navigator.clipboard.writeText(address).then(() => {
+                const originalText = button.innerText;
+                button.innerText = 'copied!';
+                button.classList.add('copied');
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = address;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+
+                const originalText = button.innerText;
+                button.innerText = 'copied!';
+                button.classList.add('copied');
+            });
+        }
+    </script>
+</body>
+</html>
