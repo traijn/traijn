@@ -14,9 +14,11 @@
 
         <main>
             <div class="pgp-content">
-
-                <pre class="pgp-key"><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
-
+                <div class="pgp-wrapper">
+                    <!-- PGP Key -->
+                    <div class="pgp-card">
+                        <pre class="pgp-key"><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
+                        
 mDMEajBBvhYJKwYBBAHaRw8BAQdAcFeOnqkMXwmzyULXGEujjw6xNDav+nd/imXP
 g5dXxyO0F2tpbWkgPGhpbUB0cmFpbmRlZXIuZXU+iLUEExYKAF0WIQToBa0oqHct
 yC8YxBmuGaP1cR5b3gUCajBBvhsUgAAAAAAEAA5tYW51MiwyLjUrMS4xMiwyLDEC
@@ -29,6 +31,15 @@ AhsMBQkFpGlSAAoJEK4Zo/VxHlvenuMBAI6X2xcLoPcjZ1CEe7saU860O1pgtrZM
 JTdWD4POQvd8AP0aFHecM5qEKY1un8CEDizpxLOOUibPxD3Gz+RD2aQpAg==
 =VFh/
 -----END PGP PUBLIC KEY BLOCK-----</code></pre>
+                    </div>
+                
+                    <!-- Download button on the right -->
+                    <div class="pgp-actions">
+                        <button onclick="downloadPGPKey()" class="download-btn">
+                            traijn.asc
+                        </button>
+                    </div>
+                </div>
             </div>
         </main>
 
@@ -36,5 +47,35 @@ JTdWD4POQvd8AP0aFHecM5qEKY1un8CEDizpxLOOUibPxD3Gz+RD2aQpAg==
             <p class="footer-text">君のキミ</p>
         </footer>
     </div>
+
+    <script>
+    function downloadPGPKey() {
+        const keyContent = `-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+    mDMEajBBvhYJKwYBBAHaRw8BAQdAcFeOnqkMXwmzyULXGEujjw6xNDav+nd/imXP
+    g5dXxyO0F2tpbWkgPGhpbUB0cmFpbmRlZXIuZXU+iLUEExYKAF0WIQToBa0oqHct
+    yC8YxBmuGaP1cR5b3gUCajBBvhsUgAAAAAAEAA5tYW51MiwyLjUrMS4xMiwyLDEC
+    GwMFCQWkaVIFCwkIBwICIgIGFQoJCAsCBBYCAwECHgcCF4AACgkQrhmj9XEeW95F
+    fgD9EJubFWhY+AFl3wdMZyx829BdrxqPcRD/UmlgbdFdiocBAMlSUeokYHJiHY2q
+    IQujnAoHR0gozH04lStuTBAAqRoMuDgEajBBvhIKKwYBBAGXVQEFAQEHQGNKAs83
+    Hg+6nnyaiDNbR4wLGQOenEVVVv7EbsdTKtE2AwEIB4iaBBgWCgBCFiEE6AWtKKh3
+    LcgvGMQZrhmj9XEeW94FAmowQb4bFIAAAAAABAAObWFudTIsMi41KzEuMTIsMiwx
+    AhsMBQkFpGlSAAoJEK4Zo/VxHlvenuMBAI6X2xcLoPcjZ1CEe7saU860O1pgtrZM
+    JTdWD4POQvd8AP0aFHecM5qEKY1un8CEDizpxLOOUibPxD3Gz+RD2aQpAg==
+    =VFh/
+    -----END PGP PUBLIC KEY BLOCK-----`;
+
+        const blob = new Blob([keyContent], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'traijn.asc';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+    </script>
 </body>
 </html>
