@@ -1,107 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+
+@font-face {
+    font-family: "Droid Serif";
+    src: url("resources/fonts/Droid Serif Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Droid Serif";
+    src: url("resources/fonts/Droid Serif Bold.ttf");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Droid Serif";
+    src: url("resources/fonts/Droid Serif Italic.ttf");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Droid Serif";
+    src: url("resources/fonts/Droid Serif Bold Italic.ttf");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
 :root {
-    --font-color-1: #102132;
+    --bg: #f5f0e6;
+    --text: #1f2937;
+    --text-light: #6b7280;
+    --accent: #4b5563;
 }
 
-@font-face {
-    font-family: "Droid Serif Regular";
-    src: url("resources/fonts/Droid\ Serif\ Regular.ttf");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-@font-face {
-    font-family: "Droid Serif Bold";
-    src: url("resources/fonts/Droid\ Serif\ Bold.ttf");
-    font-weight: bold;
-}
-@font-face {
-    font-family: "Droid Serif Italic";
-    src: url("resources/fonts/Droid\ Serif\ Italic.ttf");
-    font-style: italic, oblique;
-}
-@font-face {
-    font-family: "Droid Serif Bold Italic";
-    src: url("resources/fonts/Droid\ Serif\ Bold\ Italic.ttf");
-    font-weight: bold;
-    font-style: italic, oblique;
-}
-
-
 
 body {
-  background-color: rgb(239, 222, 205);
+    background-color: var(--bg);
+    font-family: "Droid Serif", serif;
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.5;
 }
 
-p {
-    font-size: 13px;
-    font-family: "Droid Serif";
+.container {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 0 24px;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--font-color-1);
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding-top: 80px;
 }
 
 h1 {
-    margin-top: 40px;
-    margin-bottom: 0px;
-    font-family: "Droid Serif";
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--font-color-1);
+    font-family: "Droid Serif", serif;
+    font-size: 2.rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    margin-bottom: 16px;
     text-decoration: underline;
-    text-decoration-color: var(--font-color-1);
+    text-underline-offset: 10px;
+    text-decoration-thickness: 2.5px;
+    text-decoration-color: var(--text);
 }
 
-subtext {
-    margin-top: 10px;
-    font-family: "Droid Serif";
+.tagline {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+main {
+    flex: 1;
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: var(--font-color-1);
-}
-
-links {
-    margin-top: 10px;
-    font-family: "Droid Serif";
-    display: flex;
     justify-content: center;
-    align-items: center;
-    color: var(--font-color-1);
-    font-size: 13px;
 }
 
-a:link {
-  color: var(--font-color-1);
-  background-color: transparent;
-  text-decoration: none;
+footer {
+    text-align: center;
+    padding-bottom: 60px;
 }
 
-a:visited {
-  color: var(--font-color-1);
-  background-color: transparent;
-  text-decoration: none;
+.footer-text {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    font-weight: 400;
 }
 
-a:hover {
-  color: var(--font-color-1);
-  background-color: transparent;
-  text-decoration: underline;
+/* Navigation links on homepage */
+.nav-link {
+    display: block;
+    font-size: 1.15rem;
+    color: var(--text);
+    text-decoration: none;
+    margin: 14px 0;
+    font-weight: 500;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-a:active {
-  color: var(--font-color-1);
-  background-color: transparent;
-  text-decoration: underline;
+.nav-link:hover {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-  height: 800px;
+/* Contact page specific */
+.contact-content {
+    text-align: center;
+    width: 100%;
 }
 
-.cursive {
-  font-style: italic;
+.contact-content h2 {
+    font-size: 1.65rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    letter-spacing: -0.02em;
+}
+
+.contact-item {
+    margin-bottom: 2.25rem;
+}
+
+.contact-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+}
+
+.contact-value {
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.contact-value a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-value a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* PGP page specific */
+.pgp-content {
+    width: 100%;
+    text-align: center;
+}
+
+.pgp-content h2 {
+    font-size: 1.65rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.pgp-key {
+    text-align: center;
+    background-color: #ede6d9;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 1.5rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: #374151;
+    text-align: left;
+    overflow-x: auto;
+    white-space: pre;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.pgp-key::-webkit-scrollbar {
+    height: 6px;
+}
+
+.pgp-key::-webkit-scrollbar-thumb {
+    background-color: #c4b8a8;
+    border-radius: 3px;
+}
+
+.hint {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
 }
